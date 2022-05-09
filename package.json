@@ -9,12 +9,12 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@league-of-foundry-developers/foundry-vtt-types": "^9.268.0",
     "gulp": "^4.0.2",
     "gulp-typescript": "^6.0.0-alpha.1"
   },
   "dependencies": {
     "@types/node": "^14.10.1",
-    "foundry-pc-types": "gitlab:foundry-projects/foundry-pc/foundry-pc-types",
     "typescript": "^4.0.2"
   }
 }
