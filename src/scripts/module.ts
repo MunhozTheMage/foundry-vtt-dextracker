@@ -1,6 +1,6 @@
-import DextrackerHooks from "./hooks/hooks.js";
-import { log } from "./utils/utils.js";
+import DextrackerHooks from "./hooks/_hooks.js";
+import DextrackerUtils from "./utils/_utils.js";
 
-log("Module was loaded!!!");
+DextrackerUtils.log("Module was loaded!!!");
 
 Hooks.on("getSceneControlButtons", DextrackerHooks.getSceneControlButtons);

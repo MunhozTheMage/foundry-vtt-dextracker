@@ -1,0 +1,90 @@
+/* 
+===========================================
+  General Styles
+===========================================
+*/
+
+.window-full-content {
+  margin: -8px;
+}
+
+.render-area {
+  padding: 8px;
+}
+
+.strokeless-title {
+  margin: 0;
+  border-bottom: 0;
+}
+
+.text-highlight {
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+/* 
+===========================================
+  Dex Template Styles
+===========================================
+*/
+
+.dex-template h1 {
+  font-size: 2.3rem;
+}
+
+.dex-template .creature-list {
+  padding: 0;
+  list-style: none;
+}
+
+.dex-template .creature-list .creature-list-item {
+  display: flex;
+  padding-block: 15px;
+  border-bottom: 1px solid darkgrey;
+}
+
+.dex-template .creature-list .creature-list-item .creature-image {
+  background-color: white;
+  height: 100px;
+}
+
+.dex-template .creature-list .creature-list-item .creature-info {
+  width: 100%;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dex-template .creature-list .creature-list-item .creature-info p,
+.dex-template .creature-list .creature-list-item .creature-info h3 {
+  margin: 0;
+}
+
+.dex-template .creature-list .creature-list-item .creature-info button {
+  width: 200px;
+}
+
+.dex-template .creature-list .creature-list-item .creature-info .chip {
+  padding-inline: 18px;
+  padding-block: 2px;
+  width: max-content;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.dex-template .creature-list .creature-list-item .creature-info .chip.not-seen {
+  background-color: #4d4d4d;
+}
+
+.dex-template .creature-list .creature-list-item .creature-info .chip.seen {
+  background-color: #cfa224;
+}
+
+.dex-template .creature-list .creature-list-item .creature-info .chip.caught {
+  background-color: #27881b;
+}

@@ -1,3 +1,21 @@
-<div>
-  <h1>Hello World</h1>
+<div class="window-full-content dex-template">
+  <div class="render-area" style="background-color: {{user.color}}">
+    <h1 class="strokeless-title text-highlight">{{user.name}}'s {{dexName}}</h1>
+  </div>
+
+  <div class="render-area">
+    <ul class="creature-list">
+      {{#each creatures}}
+        <li class="creature-list-item">
+          <img class="creature-image" src={{image}} />
+
+          <div class="creature-info">
+            <h3>{{name}}</h3>
+            <p class="chip {{status.type}}">{{status.text}}</p>
+            <button>Edit entry</button>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
 </div>
