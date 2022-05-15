@@ -9,12 +9,8 @@
     }
   ],
   "version": "0.0.1",
-  "minimumCoreVersion": "0.7.9",
-  "compatibleCoreVersion": "0.7.9",
-  "manifestPlusVersion": "1.0.0",
-  "url": "",
-  "manifest": "",
-  "download": "",
+  "minimumCoreVersion": "0.8.9",
+  "compatibleCoreVersion": "0.8.9",
   "type": "module",
   "includes": [
     "./assets/**",
@@ -39,7 +35,7 @@
       "location": ""
     }
   ],
-  "esmodules": ["scripts/module.js"],
+  "esmodules": ["scripts/module.js", "scripts/**/*.js"],
   "styles": ["styles/module.css"],
   "languages": [
     {
