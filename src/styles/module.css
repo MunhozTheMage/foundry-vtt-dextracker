@@ -23,6 +23,10 @@
   -webkit-text-stroke-color: black;
 }
 
+.flex {
+  display: flex;
+}
+
 /* 
 ===========================================
   Dex Template Styles
@@ -87,4 +91,30 @@
 
 .dex-template .creature-list .creature-list-item .creature-info .chip.caught {
   background-color: #27881b;
+}
+
+/* 
+===========================================
+  Imports and Exports Template Styles
+===========================================
+*/
+
+.imports-and-exports-template .warning {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.imports-and-exports-template p {
+  margin: 0;
+}
+
+.imports-and-exports-template .line-text-to-element {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.imports-and-exports-template .line-text-to-element *:last-child {
+  width: 50%;
 }

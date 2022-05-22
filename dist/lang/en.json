@@ -1,3 +1,13 @@
 {
-  "Dextracker.Title": "DexTracker"
+  "Dextracker.Title": "DexTracker",
+
+  "Dextracker.Application.ImportsAndExports.Title": "Import and Export Data",
+
+  "Dextracker.Config.DexName.Name": "Dex Name",
+  "Dextracker.Config.ImportsAndExports.Name": "Data Management",
+
+  "Dextracker.Config.DexName.Hint": "The name you want to use for the your dex.",
+  "Dextracker.Config.ImportsAndExports.Hint": "Here you can import and export data from this module.",
+
+  "Dextracker.Config.ImportsAndExports.Label": "Manage Data"
 }

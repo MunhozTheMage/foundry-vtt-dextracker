@@ -1,0 +1,29 @@
+<form class="imports-and-exports-template">
+  <h1>Creatures Data</h1>
+  <div>
+    <div id="react-dex-template-container"></div>
+    <div class="line-text-to-element">
+      <p>Import Mode:</p>
+      <select id="creatures-import-mode">
+        <option value="overwrite">Overwrite</option>
+        <option value="merge">Merge</option>
+      </select>
+    </div>
+
+    <div class="line-text-to-element">
+      <p>File to upload:</p>
+      <input type="file" id="creatures-import-file" accept="application/json" />
+    </div>
+
+    <p id="creatures-warning" class="warning">
+      Importing data will overwrite any existing data!<br />
+      If that is not what you want, please export your data first or switch to
+      the Merge Mode.
+    </p>
+
+    <div class="flex">
+      <button id="creatures-import" disabled="true">Import</button>
+      <button id="creatures-export">Export</button>
+    </div>
+  </div>
+</form>
