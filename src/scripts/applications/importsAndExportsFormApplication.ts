@@ -1,25 +1,14 @@
 import DextrackerUtils, { PATHS } from "../utils";
 import { Data } from "../data";
-
-type DexApplicationHBSOptions = {
-  user: {
-    color: string;
-    name: string;
-  };
-  creatures: {
-    image: string;
-    name: string;
-    status: {
-      type: "seen" | "not-seen" | "caught";
-      text: string;
-    };
-  }[];
-  dexName: string;
-};
+import { DextrackerGlobal } from "../utils/global";
 
 export default class ImportsAndExportsFormApplication extends FormApplication {
   constructor() {
     super({});
+  }
+
+  render(...params: Parameters<Application["render"]>) {
+    DextrackerGlobal.runIfLoaded(() => super.render(...params));
   }
 
   static get defaultOptions() {

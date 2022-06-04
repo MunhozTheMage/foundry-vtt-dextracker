@@ -2,6 +2,7 @@
   "Dextracker.Title": "DexTracker",
 
   "Dextracker.Application.ImportsAndExports.Title": "Import and Export Data",
+  "Dextracker.Application.CreatureEdit.Title": "Edit Creature",
 
   "Dextracker.Config.DexName.Name": "Dex Name",
   "Dextracker.Config.ImportsAndExports.Name": "Data Management",

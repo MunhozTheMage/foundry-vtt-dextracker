@@ -3,19 +3,39 @@
     <h1 class="strokeless-title text-highlight">{{user.name}}'s {{dexName}}</h1>
   </div>
 
-  <div class="render-area">
-    <ul class="creature-list">
-      {{#each creatures}}
-        <li class="creature-list-item">
-          <img class="creature-image" src={{image}} />
+  <div class="render-area search">
+    <div class="search-text-container">
+      <label for="search-text">Search by name:</label>
+      <input id="search-text" placeholder="Type the name here..." />
+    </div>
 
-          <div class="creature-info">
-            <h3>{{name}}</h3>
-            <p class="chip {{status.type}}">{{status.text}}</p>
-            <button>Edit entry</button>
-          </div>
-        </li>
-      {{/each}}
-    </ul>
+    <button id="search-button">Search</button>
+  </div>
+
+  <ul class="creature-list render-area">
+    {{#each creatures}}
+      <li class="creature-list-item">
+        <img class="creature-image" src={{image}} />
+
+        <div class="creature-info">
+          <h3>{{name}}</h3>
+          <p class="chip {{status.type}}">{{status.text}}</p>
+          <button class="creature-edit-entry" data-creature-id={{id}}>Edit entry</button>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+
+  <div class="pagination">
+    <div class="pagination-main">
+      <button id="pagination-prev">&#60; Prev</button>
+      <p>{{currentPage}} of {{totalPages}}</p>
+      <button id="pagination-next">Next &#62;</button>
+    </div>
+
+    <div class="pagination-under">
+      <input type="number" id="pagination-input" />
+      <button id="pagination-input-button">Go to page</button>
+    </div>
   </div>
 </div>

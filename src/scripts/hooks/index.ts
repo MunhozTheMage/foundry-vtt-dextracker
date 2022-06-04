@@ -2,18 +2,26 @@ import DextrackerApplications from "../applications";
 import { Data } from "../data";
 import DextrackerUtils from "../utils";
 import DextrackerSettingEntries from "../settings";
+import { DextrackerGlobal } from "../utils/global";
 
 export default class DextrackerHooks {
   public static async init() {
-    if (!("world" in game)) return;
-
     DextrackerSettingEntries.init();
 
-    const currentWorld = game.world.id;
-    const baseDir = `./worlds/${currentWorld}/dextracker`;
+    const baseDir = DextrackerHooks._baseDir();
 
     await DextrackerUtils.ensureDirectoryExists("data", baseDir);
+    await DextrackerUtils.ensureDirectoryExists("data", `${baseDir}/userData`);
+
     await Data.init(baseDir);
+  }
+
+  public static async ready() {
+    const baseDir = DextrackerHooks._baseDir();
+
+    await Data.postInit(baseDir);
+
+    DextrackerGlobal.finishLoading();
   }
 
   public static getSceneControlButtons(controls: SceneControl[]) {
@@ -39,4 +47,9 @@ export default class DextrackerHooks {
       button: true,
     });
   };
+
+  private static _baseDir() {
+    const currentWorld = (game as Game).world.id;
+    return `./worlds/${currentWorld}/dextracker`;
+  }
 }

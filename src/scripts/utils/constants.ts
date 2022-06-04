@@ -21,5 +21,6 @@ export const PATHS = {
   TEMPLATES: {
     DEX: `${TEMPLATES_LOCATION}/dex.hbs`,
     IMPORTS_AND_EXPORTS: `${TEMPLATES_LOCATION}/imports-and-exports.hbs`,
+    CREATURE_EDIT: `${TEMPLATES_LOCATION}/creature-edit.hbs`,
   },
 };

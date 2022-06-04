@@ -1,9 +1,10 @@
 import { JSONUploader } from "../utils/jsonUploader";
 import DextrackerUtils from "../utils";
 import * as TG from "@gabrielurbina/type-guard";
-import { groupBy, range, times } from "rambda";
+import { filter, range, times } from "rambda";
+import BaseData from "./baseData";
 
-type CreatureObject = { id: number; name: string; image: string };
+export type CreatureObject = { id: number; name: string; image: string };
 
 export type CreaturesData = {
   currentId: number;
@@ -25,22 +26,19 @@ const isCreatureData = TG.ObjectOf<CreaturesData>({
   creatures: TG.ArrayOf([isCreatureObject]),
 });
 
-export class Creatures {
-  private uploader: JSONUploader<CreaturesData>;
-
+export class Creatures extends BaseData<CreaturesData> {
   constructor({ baseDir }: { baseDir: string }) {
-    this.uploader = new JSONUploader({
+    super({
       fileName: "creatures.json",
-      path: `${baseDir}`,
+      baseDir,
     });
   }
 
-  public async init() {
-    await this.uploader.init();
-    await this._createFileIfNotPresent();
+  get defaultData(): CreaturesData {
+    return { currentId: 0, creatures: [] };
   }
 
-  public async getCreatures() {
+  public async getData() {
     const data = await this.uploader.getJsonData();
 
     if (!isCreatureData(data)) {
@@ -55,7 +53,7 @@ export class Creatures {
     data: CreaturesImportData,
     { overwrite = true } = {}
   ) {
-    const currentData = await this.getCreatures();
+    const currentData = await this.getData();
     let currentId = overwrite ? 0 : currentData.currentId;
 
     const importedCreatures: CreaturesData["creatures"] = data.creatures.map(
@@ -77,7 +75,7 @@ export class Creatures {
   }
 
   public async exportCurrentData(): Promise<string> {
-    const currentData = await this.getCreatures();
+    const currentData = await this.getData();
 
     const inputFormatData: CreaturesImportData = {
       creatures: currentData.creatures.map((creature) => ({
@@ -89,14 +87,16 @@ export class Creatures {
     return JSON.stringify(inputFormatData);
   }
 
-  public async getPaginatedCreatures(amountPerPage = 15) {
-    const { creatures } = await this.getCreatures();
+  public paginateCreatures(creatures: CreatureObject[], amountPerPage = 15) {
     const pages = Math.ceil(creatures.length / amountPerPage);
 
     const paginatedCreatures = times(
       (i) =>
-        range(i * amountPerPage, i * amountPerPage + amountPerPage).map(
-          (i) => creatures[i]!
+        filter<CreatureObject>(
+          Boolean,
+          range(i * amountPerPage, i * amountPerPage + amountPerPage).map(
+            (i) => creatures[i]!
+          )
         ),
       pages
     );
@@ -109,22 +109,5 @@ export class Creatures {
 
   private async _setCreatures(creatures: CreaturesData) {
     this.uploader.upload(creatures);
-  }
-
-  private async _createFileIfNotPresent() {
-    const fileExists = await DextrackerUtils.checkIfFileExists(
-      this.uploader.source,
-      this.uploader.path,
-      this.uploader.fileName
-    );
-
-    if (fileExists) return;
-
-    const defaultData: CreaturesData = {
-      currentId: 0,
-      creatures: [],
-    };
-
-    await this.uploader.upload(defaultData);
   }
 }
