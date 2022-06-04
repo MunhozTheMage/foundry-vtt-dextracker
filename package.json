@@ -1,14 +1,14 @@
 {
   "name": "foundry-vtt-dextracker",
   "version": "1.0.0",
-  "description": "Foundry VTT Typescript Template",
+  "description": "A generic collectable monster tracker for Foundry VTT.",
   "main": "index.js",
   "scripts": {
     "bundle": "rollup --config rollup.config.ts --configPlugin typescript",
     "build-statics": "gulp build-statics",
     "build": "gulp build"
   },
-  "author": "",
+  "author": "MunhozTheMage",
   "license": "MIT",
   "devDependencies": {
     "@league-of-foundry-developers/foundry-vtt-types": "^9.268.0",
