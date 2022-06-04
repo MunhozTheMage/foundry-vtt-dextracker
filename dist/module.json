@@ -8,7 +8,7 @@
       "discord": "Munhoz#8918"
     }
   ],
-  "version": "0.0.1",
+  "version": "1.0.0",
   "minimumCoreVersion": "0.8.9",
   "compatibleCoreVersion": "0.8.9",
   "type": "module",
@@ -20,20 +20,6 @@
     "./module.js",
     "./module.json",
     "./README.md"
-  ],
-  "media": [
-    {
-      "type": "icon",
-      "location": ""
-    },
-    {
-      "type": "cover",
-      "location": ""
-    },
-    {
-      "type": "screenshot",
-      "location": ""
-    }
   ],
   "esmodules": ["module.js"],
   "styles": ["styles/module.css"],
