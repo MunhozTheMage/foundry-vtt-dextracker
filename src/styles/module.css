@@ -1,0 +1,186 @@
+/* 
+===========================================
+  General Styles
+===========================================
+*/
+
+.window-full-content {
+  margin: -8px;
+}
+
+.render-area {
+  padding: 8px;
+}
+
+.strokeless-title {
+  margin: 0;
+  border-bottom: 0;
+}
+
+.text-highlight {
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-space {
+  justify-content: space-between;
+}
+
+/* 
+===========================================
+  Dex Template Styles
+===========================================
+*/
+
+.dex-template {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dex-template h1 {
+  font-size: 2.3rem;
+}
+
+.dex-template .search {
+  display: flex;
+  align-items: flex-end;
+}
+
+.dex-template .search button {
+  width: min-content;
+  height: min-content;
+  margin-left: 10px;
+  padding-inline: 20px;
+}
+
+.dex-template .search .search-text-container {
+  flex-grow: 1;
+}
+
+.dex-template .search .search-text-container input {
+  width: 100%;
+  height: 30px;
+}
+
+.dex-template .creature-list {
+  padding-block: 0;
+  list-style: none;
+  overflow-y: scroll;
+  border-bottom: 1px solid darkgrey;
+}
+
+.dex-template .creature-list .creature-list-item {
+  display: flex;
+  padding-block: 15px;
+  border-bottom: 1px solid darkgrey;
+}
+
+.dex-template .creature-list .creature-list-item .creature-image {
+  background-color: white;
+  height: 100px;
+}
+
+.dex-template .creature-list .creature-list-item .creature-info {
+  width: 100%;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dex-template .creature-list .creature-list-item .creature-info p,
+.dex-template .creature-list .creature-list-item .creature-info h3 {
+  margin: 0;
+}
+
+.dex-template .creature-list .creature-list-item .creature-info button {
+  width: 200px;
+}
+
+.dex-template .creature-list .creature-list-item .creature-info .chip {
+  padding-inline: 18px;
+  padding-block: 2px;
+  width: max-content;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.dex-template .creature-list .creature-list-item .creature-info .chip.not-seen {
+  background-color: #4d4d4d;
+}
+
+.dex-template .creature-list .creature-list-item .creature-info .chip.seen {
+  background-color: #cfa224;
+}
+
+.dex-template .creature-list .creature-list-item .creature-info .chip.caught {
+  background-color: #27881b;
+}
+
+.dex-template .pagination {
+  margin-bottom: 10px;
+}
+
+.dex-template .pagination .pagination-main,
+.dex-template .pagination .pagination-under {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dex-template .pagination .pagination-main p {
+  margin-inline: 20px;
+}
+
+.dex-template .pagination .pagination-main button {
+  width: 80px;
+}
+
+.dex-template .pagination .pagination-under button {
+  width: max-content;
+  margin-left: 10px;
+}
+
+.dex-template .pagination .pagination-under input {
+  width: 55px;
+  height: 32px;
+}
+
+/* 
+===========================================
+  Imports and Exports Template Styles
+===========================================
+*/
+
+.imports-and-exports-template .warning {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.imports-and-exports-template p {
+  margin: 0;
+}
+
+.imports-and-exports-template .line-text-to-element {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.imports-and-exports-template .line-text-to-element *:last-child {
+  width: 50%;
+}

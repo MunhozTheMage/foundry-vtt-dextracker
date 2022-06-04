@@ -1,26 +1,23 @@
 {
-  "name": "foundry-typescript-template",
-  "title": "Typescript Template",
-  "description": "", 
+  "name": "foundry-vtt-dextracker",
+  "title": "Foundry VTT - Dextracker",
+  "description": "A generic collectable monster tracker for Foundry VTT.",
   "authors": [
     {
-      "name": "spacemandev",
-      "discord": "spacemandev#6256"
+      "name": "munhozthemage",
+      "discord": "Munhoz#8918"
     }
   ],
   "version": "0.0.1",
-  "minimumCoreVersion": "0.6.0",
-  "compatibleCoreVersion": "0.7.2",
-  "url": "",
-  "manifest": "",
-  "download": "",
+  "minimumCoreVersion": "0.8.9",
+  "compatibleCoreVersion": "0.8.9",
   "type": "module",
   "includes": [
     "./assets/**",
     "./lang/**",
-    "./scripts/**",
     "./styles/**",
     "./templates/**",
+    "./module.js",
     "./module.json",
     "./README.md"
   ],
@@ -28,7 +25,7 @@
     {
       "type": "icon",
       "location": ""
-    }, 
+    },
     {
       "type": "cover",
       "location": ""
@@ -38,12 +35,8 @@
       "location": ""
     }
   ],
-  "esmodules": [
-    "scripts/module.js"
-  ],
-  "styles": [
-    "styles/module.css"
-  ],
+  "esmodules": ["module.js"],
+  "styles": ["styles/module.css"],
   "languages": [
     {
       "lang": "en",
