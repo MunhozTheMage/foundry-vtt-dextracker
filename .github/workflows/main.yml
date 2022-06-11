@@ -38,7 +38,7 @@ jobs:
           name: Latest
           draft: false
           prerelease: false
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT }}
           artifacts: "./dist/module.json, ./module.zip"
           tag: latest
 
