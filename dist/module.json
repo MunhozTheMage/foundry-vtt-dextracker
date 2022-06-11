@@ -8,6 +8,9 @@
       "discord": "Munhoz#8918"
     }
   ],
+  "url": "https://github.com/MunhozTheMage/foundry-vtt-dextracker",
+  "manifest": "https://github.com/MunhozTheMage/foundry-vtt-dextracker/releases/latest/download/module.json",
+  "download": "https://github.com/MunhozTheMage/foundry-vtt-dextracker/releases/latest/download/module.zip",
   "version": "1.0.0",
   "minimumCoreVersion": "0.8.9",
   "compatibleCoreVersion": "0.8.9",
